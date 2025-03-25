@@ -1,8 +1,10 @@
+import Lesson06 from './lessons/Lesson06/Lesson06';
+
 function App() {
 
   return (
     <>
-    First React+TS project
+   <Lesson06/>
     </>
   )
 }
