@@ -1,13 +1,13 @@
+import './styles.css';
 
-const Input = () => {
+function Input() {
   return (
     <input 
-      type="text" 
-      placeholder="text"
-      name="homework"
-       className="border p-3 rounded-md w-full shadow-md text-lg"
+      placeholder="Enter text"
+      name="text"
+      className="input-component"
     />
   );
-};
+}
 
 export default Input;
