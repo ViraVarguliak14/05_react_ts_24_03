@@ -7,7 +7,7 @@ function Lesson06() {
     console.log(getAction(TRAFFIC_LIGHT.GREEN));
 
 
-  return <div><Button /></div>;
+  return <div><Button name="Send" /></div>;
 }
 
 export default Lesson06;
