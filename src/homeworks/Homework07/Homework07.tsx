@@ -1,21 +1,22 @@
 import { v4 } from "uuid"
 
-import Product from "../../components/Product/Products"
+import ProductCard from "../../components/Product/Products"
 import { products } from "./data"
 import './styles.css'
+import { Product } from "./types"
 
 
 
 function Homework07(){
-  const productCards = products.map((product) =>{
-    return<Product
+  const productCards = products.map((productObj:Product) =>{
+    return<ProductCard
     key={v4()}
-    name={product.name}
-    price={product.price}/>
+    productName={productObj.name}
+    productPrice={productObj.price}/>
   })
   
   return(
-  <div className="container">
+  <div className="homework07-container">
     {productCards}
   </div>
 )

@@ -1,13 +1,13 @@
 import { ProductProps } from "./types";
-import './styles.css'
+import "./styles.css";
 
-function Product ({name, price}: ProductProps) {
-    return (
-        <div className="product-container">
-        <h2>{name}</h2>
-        <p>{price.toFixed(2)}</p>
-        </div>
-    )
+function Product({ productName, productPrice }: ProductProps) {
+  return (
+    <div className="product-container">
+      <h2>Product: {productName}</h2>
+      <p>Price: {productPrice.toFixed(2)}</p>
+    </div>
+  );
 }
 
 export default Product;

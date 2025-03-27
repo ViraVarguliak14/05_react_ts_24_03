@@ -3,7 +3,7 @@
     height: 50px;
     padding: 12px;
     outline: none;
-    border: 1px solid blue;
+    border: 1px solid rgba(0, 0, 255, 0.901);
     border-radius: 4px;
     font-size: 18px;
 }

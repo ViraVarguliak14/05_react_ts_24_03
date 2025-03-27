@@ -1,8 +1,9 @@
-.container {
+.homework07-container {
     display: flex;
-    gap: 50px;
+    gap: 100px;
     align-items: center;
     font-size: 24px;
     flex: 1;
     background:linear-gradient(15deg, rgba(193, 194, 237, 0.768), rgba(229, 240, 78, 0.705));
+    padding: 100px;
 }

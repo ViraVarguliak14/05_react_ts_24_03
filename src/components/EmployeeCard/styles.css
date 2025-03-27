@@ -1,0 +1,17 @@
+.employee-card-container {
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    /* обычные свойства */
+    min-width: 300px;
+    min-height: 400px;
+    padding: 30px;
+    background-color: rgb(12, 126, 240);
+    border-radius: 10px;
+    font-size: 24px;
+}
+
+.employee-card-container > img {
+    width: 150px; 
+}
