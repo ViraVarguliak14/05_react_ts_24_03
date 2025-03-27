@@ -1,11 +1,11 @@
 .main-button {
-    width: 300px;
-    height: fit-content;
-    padding: 20px;
-    background: rgb(19, 4, 235);
-    border: none;
-    border-radius: 6px;
-    font-size: 26px;
-    color: white;
-    cursor: pointer;
+  margin-top: 10px;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: hsl(55, 100%, 50%);
+  color: black;
+  font-weight: bold;
   }
