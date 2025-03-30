@@ -1,26 +1,29 @@
-.homework08-container{ 
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    background: linear-gradient(135deg, #6e8efb, #a777e3);
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    color: rgb(236, 236, 17);
-    font-family: "Arial", sans-serif;
+.homework08-container{
+  display: flex;
+flex-direction: column;
+justify-content: center; /* Центрує по вертикалі */
+align-items: center; /* Центрує по горизонталі */
+width: 100vw; /* На всю ширину */
+height: 100vh; /* На всю висоту */
+padding: 40px;
+gap: 30px;
+background: linear-gradient(135deg, #6e8efb, #a777e3);
+border-radius: 15px;
+box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+text-align: center;
+color: rgb(236, 236, 17);
+font-family: "Arial", sans-serif;
 }
 .chang-password {
-    font-size: 24px;
-    margin-bottom: 20px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-  .label-password {
-    display: block;
-    font-size: 16px;
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
 
-
+.result-container {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+}

@@ -16,19 +16,24 @@ function Homework08() {
     const showPasswordHandler = () => {
         setShowPassword(!setShowPassword)
     }
+    const hidePassword = () =>{
+        setShowPassword(false)
+    }
 
     return (
         <div className="homework08-container">
             <h2 className="chang-password">Change password</h2>
-            <label className="label-password">Password</label>
             <Input name="enter-password"
+                label="label-password"
+                id='password_id'
                 type="password"
                 placeholder="Enter your password"
                 value={password}
                 onChange={onChangePassword}
             />
             <Button name="SHOW PASSWORD" onClick={showPasswordHandler} />
-            {showPassword && <div>{password}</div>}
+            <Button name="HIDE PASSWORD" onClick={hidePassword} />
+            {showPassword && <div className="result-container">{password}</div>}
         </div>
     );
 }
