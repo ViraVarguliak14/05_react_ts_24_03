@@ -4,4 +4,5 @@
     onClick?: () => void, 
     disabled?: boolean,
     type?: 'submit'| 'button'|'reset'
+    danger?: boolean;
 }

@@ -1,5 +1,6 @@
-import "./styles.css";
+import {MainButton} from './styles'
 import { ButtonProps } from './types';
+
 
 // interface ButtonProps {
 //     name: string,
@@ -8,17 +9,25 @@ import { ButtonProps } from './types';
 //     disabled?: boolean,
 //     type?: 'submit'| 'button'|'reset'
 // }
-function Button({ name, onClick, disabled=false, type='submit' }: ButtonProps ) {
+function Button({
+     name, 
+     onClick, 
+     disabled=false,
+     danger = false, 
+     type='submit',    
+    }:
+      ButtonProps ) {
     return (
-        <button 
-        className="main-button" 
+        <MainButton 
         onClick={onClick} 
         disabled={disabled}
         type={type}
+        danger={danger} 
         >
         {name}
-        </button>
+        </MainButton>
     );
 }
 
 export default Button;
+
