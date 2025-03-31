@@ -15,11 +15,6 @@ export const Lesson10Container = styled.div`
   ${boxBasicStyles}
   /* display: flex;
   flex-direction: column; */
-=======
-// export const = styled.``
-export const Lesson10Container = styled.div`
-  display: flex;
-  flex-direction: column;
   gap: 40px;
   flex: 1;
   padding: 50px;
@@ -28,8 +23,6 @@ export const Lesson10Container = styled.div`
 
 export const SectionWrapper = styled.section`
   ${boxBasicStyles}
-  display: flex;
-  flex-direction: column;
   gap: 20px;
   padding: 30px;
   background-color: white;
@@ -72,7 +65,6 @@ export const NoteTitle = styled.h3`
 export const NoteDescription = styled.p`
  font-size: 18px;
 `
-
 // Расширение компонентов (наследование)
 export const MainSection = styled(SectionWrapper)`
  box-shadow: 3px 3px 10px rgb(230, 224, 224);
