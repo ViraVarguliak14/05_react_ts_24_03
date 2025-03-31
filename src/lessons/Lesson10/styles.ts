@@ -15,6 +15,11 @@ export const Lesson10Container = styled.div`
   ${boxBasicStyles}
   /* display: flex;
   flex-direction: column; */
+=======
+// export const = styled.``
+export const Lesson10Container = styled.div`
+  display: flex;
+  flex-direction: column;
   gap: 40px;
   flex: 1;
   padding: 50px;
@@ -23,6 +28,8 @@ export const Lesson10Container = styled.div`
 
 export const SectionWrapper = styled.section`
   ${boxBasicStyles}
+  display: flex;
+  flex-direction: column;
   gap: 20px;
   padding: 30px;
   background-color: white;
