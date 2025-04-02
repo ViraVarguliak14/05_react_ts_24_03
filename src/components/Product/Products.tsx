@@ -1,13 +1,22 @@
+import { useEffect } from "react";
+
 import { ProductProps } from "./types";
-import "./styles.css";
+import './styles.css'
 
 function Product({ productName, productPrice }: ProductProps) {
+//Unmouting - выполняем действие при размонтировании компонента Product
+useEffect(()=>{
+  return ()=>{
+    console.log('Component will unmount'); 
+  }
+}, []);
+
   return (
     <div className="product-container">
-      <h2>Product: {productName}</h2>
-      <p>Price: {productPrice.toFixed(2)}</p>
+      <div>Product: {productName}</div>
+      <div>Price: {productPrice}</div>
     </div>
-  );
+  )
 }
 
 export default Product;
