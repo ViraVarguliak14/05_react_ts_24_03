@@ -9,9 +9,20 @@ export const MainButton = styled.button<ButtonStyledProps>`
   padding: 12px 20px;
   font-size: 20px;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
-  background-color: ${({ danger }) => (danger ? '#DB110A' : '#ccee0d')}; 
+  background: ${({ danger }) => (danger ? '#DB110A' : '#ee0d6b')};
   color: white;
   font-weight: bold;
-`;
+  transition: 0.3s ease, transform 0.2s ease;
+
+  &:hover {
+    background: ${({ danger }) => (danger ? '#A30D08' : '#BBDD00')};
+    transform: scale(1.1);
+  }
+
+  &:disabled {
+    background: gray;
+    cursor: not-allowed;
+  }
+  `;

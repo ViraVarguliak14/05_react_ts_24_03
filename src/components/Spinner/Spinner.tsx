@@ -1,4 +1,4 @@
-import { SpinnerComponent } from "./styles"
+import { SpinnerComponent } from "./styles";
 
 function Spinner (){
   return <SpinnerComponent></SpinnerComponent>
