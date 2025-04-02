@@ -20,7 +20,7 @@ function Homework12() {
         try {
             setIsLoading(true);
             const response = await axios.get(FACT_URL)
-            setFact(`${response.data.fact}`)
+            setFact(response.data.fact)
         } catch (error: any) {
             setError(error.message);
         } finally {
