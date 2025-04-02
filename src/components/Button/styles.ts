@@ -11,7 +11,7 @@ export const MainButton = styled.button<ButtonStyledProps>`
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  background-color: ${({ danger }) => (danger ? '#DB110A' : '#0f68dd')}; 
+  background-color: ${({ danger }) => (danger ? '#DB110A' : '#ccee0d')}; 
   color: white;
   font-weight: bold;
 `;
