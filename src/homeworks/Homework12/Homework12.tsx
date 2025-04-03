@@ -24,7 +24,6 @@ function Homework12() {
         } catch (error: any) {
             setError(error.message);
         } finally {
-            console.log('Результат получен');
             setIsLoading(false);
         }
     }
