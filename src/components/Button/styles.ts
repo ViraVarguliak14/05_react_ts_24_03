@@ -12,13 +12,13 @@ export const MainButton = styled.button<ButtonStyledProps>`
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  background: ${({ danger }) => (danger ? '#DB110A' : '#360dee')};
+  background: ${({ danger }) => (danger ? '#DB110A' : '#0d09f0')};
   color: white;
   font-weight: bold;
   transition: 0.3s ease, transform 0.2s ease;
 
   &:hover {
-    background: ${({ danger }) => (danger ? '#A30D08' : '#0f00dd')};
+    background: ${({ danger }) => (danger ? '#A30D08' : '#4378eb')};
     transform: scale(1.1);
   }
 

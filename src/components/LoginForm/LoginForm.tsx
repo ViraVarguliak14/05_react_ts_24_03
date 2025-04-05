@@ -64,8 +64,7 @@ function LoginForm() {
         placeholder="Enter your email"
         value={formik.values.email}
         onChange={formik.handleChange}
-        error={formik.errors.email}
-      />
+        error={formik.errors.email}      />
       {/* <Error></Error> */}
       <Input
         name='password'
@@ -74,8 +73,7 @@ function LoginForm() {
         placeholder="Enter your password"
         value={formik.values.password}
         onChange={formik.handleChange}
-        error={formik.errors.password}
-      />
+        error={formik.errors.password}      />
       {/* <Error></Error> */}
       <Button name='LOGIN' />
     </LoginFormComponent>

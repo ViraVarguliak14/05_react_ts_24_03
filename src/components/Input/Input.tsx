@@ -10,7 +10,7 @@ function Input({
   label,
   id,
   search,
-  error
+  error,
 }: InputProps) {
   return (
     <InputContainer>
