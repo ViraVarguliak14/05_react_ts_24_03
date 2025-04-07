@@ -12,7 +12,12 @@ export const Lesson13Container = styled.div`
   background: linear-gradient(135deg, #807ea1, #fad0c4);
   min-height: 100vh;
   justify-content: center;
-`;
+  `
+  export const ButtonContainer = styled.div`
+ display: flex;
+ gap: 20px;
+ width: 500px;
+`
 export const ImageWrapper = styled.img`
  width: 400px;
   height: auto;
@@ -31,6 +36,9 @@ max-height: 700px;
   gap: 10px;
   padding-right: 20px;
 `;
+export const Image = styled.img`
+width: 400px;
+`
 export const Error = styled.div`
   font-size: 20px;
   color: red;
