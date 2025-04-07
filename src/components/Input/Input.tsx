@@ -1,4 +1,4 @@
-import { InputContainer, Label, InputComponent } from './styles';
+import { InputContainer, Label, InputComponent, ErrorMessage } from './styles';
 import { InputProps } from './types';
 
 function Input({
@@ -10,7 +10,11 @@ function Input({
   label,
   id,
   search,
-  onKeyDown
+
+ onKeyDown
+
+  error,
+
 }: InputProps) {
   return (
     <InputContainer>
@@ -25,6 +29,7 @@ function Input({
         isSearch = {search}
         onKeyDown={onKeyDown}
       />
+      <ErrorMessage>{error}</ErrorMessage>
     </InputContainer>
   )
 }

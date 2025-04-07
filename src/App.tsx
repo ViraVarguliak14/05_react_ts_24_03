@@ -1,5 +1,6 @@
 import GlobalStyles from "./styles/GlobalStyles";
 
+
 // import Homework06 from "./homeworks/Homework06/Homework06";
 
 // import Lesson07 from "./lessons/Lessons07/Lessons07";
@@ -20,10 +21,14 @@ import GlobalStyles from "./styles/GlobalStyles";
 import Lesson13 from "./lessons/Lesson13/Lesson13";
 
 
+import Homework14 from './homeworks/Homework14/Homework14';
+
+
 function App() {
   return (
     <>
       <GlobalStyles/>
+
       {/* <Lesson06/> */}
       {/* <Homework06 /> */}
       {/* <Lesson07/> */}
@@ -41,6 +46,10 @@ function App() {
       {/* <Lesson12 /> */}
       <Lesson13/>
      
+
+      <Homework14/>
+     
+
 
     </>
   );
