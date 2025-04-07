@@ -61,6 +61,7 @@ function EmployeeForm() {
                 name='terms'
                 type="checkbox"
                 id='terms_id'
+                checked={formik.values.terms}
                 onChange={formik.handleChange}
             />
            <Button name='SUBMIT' />
