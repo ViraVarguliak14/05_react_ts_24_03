@@ -1,4 +1,5 @@
 import { ChangeEvent } from "react";
+import { KeyboardEvent } from "react";
 
 export interface InputProps {
   placeholder?: string,
@@ -9,6 +10,10 @@ export interface InputProps {
   label?: string,
   id?: string,
   search?: boolean,
+
+  onKeyDown?: (event: KeyboardEvent<HTMLInputElement>) => void;
+
   error?: string
+
 
 }

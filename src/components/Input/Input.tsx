@@ -10,7 +10,11 @@ function Input({
   label,
   id,
   search,
+
+ onKeyDown
+
   error,
+
 }: InputProps) {
   return (
     <InputContainer>
@@ -23,6 +27,7 @@ function Input({
         type={type}
         id={id}
         isSearch = {search}
+        onKeyDown={onKeyDown}
       />
       <ErrorMessage>{error}</ErrorMessage>
     </InputContainer>
