@@ -4,7 +4,11 @@ import GlobalStyles from "./styles/GlobalStyles";
 import Layout from "./components/Layout/Layout";
 import About from "./pages/About/About";
 import Home from "./pages/Home/Home";
-
+import Course from "./pages/Course/Course";
+import Users from './pages/User/Users'
+import Designer from './pages/User/components/Designer/Designer'
+import Manager from './pages/User/components/Manager/Manager'
+import PageNotFound from './pages/PageNotFound/PageNotFound'
 
 // import Homework06 from "./homeworks/Homework06/Homework06";
 
@@ -43,6 +47,14 @@ function App() {
           который должен быть вызван, если выполнен переход по этому маршруту */}
           <Route path='/' element={<Home />}/>
           <Route path='/about' element={<About />}/>
+          <Route path='/course' element={<Course/>}/>
+          <Route path='/users' element={<Users />} />
+          <Route path='/users/designer' element={<Designer />} />
+          <Route path='/users/manager' element={<Manager />} />
+           {/* path='*' - специальный маршрут, который вызовет переданный компонент в
+          том случае, если в маршрутах выше не будет найдено того маршрута,
+          к которому обращается пользователь */}
+          <Route path='*' element={<PageNotFound />} />
         </Routes>
       </Layout>
     </BrowserRouter>

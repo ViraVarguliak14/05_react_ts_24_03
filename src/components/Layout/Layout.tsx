@@ -1,25 +1,51 @@
-import { NavLink } from "react-router-dom"
-import { LayoutComponent, Header, LogoText, Nav, Main, Footer } from "./styles"
-import { LayoutProps } from "./types"
 
-function Layout ({children} : LayoutProps) {
-    return(
-        <LayoutComponent>
-        <Header>
-          <LogoText>Company name</LogoText>
-          <Nav>
-            {/* NavLink - компонент библиотеки, который добавляет ссылку на 
-            страницу по маршруту через prop to */}
-            <NavLink to='/'>Home</NavLink>
-            <NavLink to='/about'>About</NavLink>
-          </Nav>
-        </Header>
-        <Main>{children}</Main>
-        <Footer>
-          <LogoText>Company name</LogoText>
-        </Footer>
-      </LayoutComponent>
+import { v4 } from "uuid"
+import { navLinksData } from "./data"
+import { LayoutComponent, Header, LogoText, Nav, Main, Footer, StyledNavLink, LogoImage } from "./styles"
+import { LayoutProps, NavLinkObj } from "./types"
+import { Link, useNavigate } from "react-router-dom";
+import { ButtonContainer } from "../../lessons/Lesson13/styles";
+import Logo from '../../assets/Cartoonify.png'
+import Button from "../Button/Button";
+
+function Layout({ children }: LayoutProps) {
+  const navigate = useNavigate();
+
+  const goBack = () => {
+    //при вызове функции navigate, если добавить в качестве атрибута -1,
+    //тогда при выполнении функции нас всегда будет возвращать на предыдущую открытую страницу
+    navigate(-1)
+  }
+
+  const navLinks = navLinksData.map((navLink: NavLinkObj) => {
+    return (
+      <StyledNavLink key={v4()} to={navLink.to} style={
+        ({ isActive }) => ({ textDecoration: isActive ? 'underline' : 'none' })
+      }>{navLink.linkName}</StyledNavLink>
     )
+  })
+
+  return (
+    <LayoutComponent>
+      <Header>
+        <Link to='/'>
+          <LogoImage src={Logo} />
+        </Link>
+        <Nav>
+          {/* NavLink - компонент библиотеки, который добавляет ссылку на 
+          страницу по маршруту через prop to */}
+          {navLinks}
+        </Nav>
+      </Header>
+      <Main>{children}</Main>
+      <Footer>
+        <ButtonContainer>
+          <Button name='<-' onClick={goBack} />
+        </ButtonContainer>
+        <LogoText>Company name</LogoText>
+      </Footer>
+    </LayoutComponent>
+  )
 }
 
 export default Layout
