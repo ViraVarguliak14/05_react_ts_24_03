@@ -9,6 +9,10 @@ import Users from './pages/User/Users'
 import Designer from './pages/User/components/Designer/Designer'
 import Manager from './pages/User/components/Manager/Manager'
 import PageNotFound from './pages/PageNotFound/PageNotFound'
+import Clients from "./pages/Clients/Clients";
+import Facebook from './pages/Clients/components/Facebook/Facebook'
+import Instagram from "./pages/Clients/components/Instagram/Instagram";
+import Telegram from "./pages/Clients/components/Telegram/Telegram";
 
 // import Homework06 from "./homeworks/Homework06/Homework06";
 
@@ -51,6 +55,11 @@ function App() {
           <Route path='/users' element={<Users />} />
           <Route path='/users/designer' element={<Designer />} />
           <Route path='/users/manager' element={<Manager />} />
+          <Route path='/clients/' element={<Clients />} />
+          <Route path='/clients/facebook' element={<Facebook/>} />
+          <Route path='/clients/instagram' element={<Instagram />} />
+          <Route path='/clients/telegram' element={<Telegram />} />
+
            {/* path='*' - специальный маршрут, который вызовет переданный компонент в
           том случае, если в маршрутах выше не будет найдено того маршрута,
           к которому обращается пользователь */}
