@@ -10,10 +10,8 @@ function Input({
   label,
   id,
   search,
-
- onKeyDown
-
-  error,
+ onKeyDown,
+ error
 
 }: InputProps) {
   return (

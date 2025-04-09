@@ -1,32 +1,36 @@
 import styled from "@emotion/styled";
 
-
-export const  EmployeeFormComponent= styled.form`
+export const EmployeeFormComponent = styled.form`
  display: flex;
  flex-direction: column;
- gap: 30px;
- min-width: 500px;
- padding: 30px;
- background-color:  #abd0f3;
+ gap: 10px;
+ min-width: 600px;
+ padding: 40px;
+ background-color: white;
  border: 2px solid black;
- border-radius: 10px;
- 
+ border-radius: 6px;
 `
 export const Title = styled.div`
- font-size: 30px;
  align-self: center;
+ font-size: 26px;
  font-weight: bold;
- `
- export const CheckboxInput = styled.input`
- margin-right: 8px;
- cursor: pointer;
- width: 20px;
- height: 20px;
+`
 
-  &:checked + label::after {
-    content: "✔"; 
-    color: red;  
-    
-  }
-`;
- 
+export const CheckboxContainer = styled.div`
+ display: flex;
+ align-items: center;
+ gap: 10px;
+`
+export const Checkbox = styled.input`
+ width: 25px;
+ height: 25px;
+`
+export const CheckboxLabel = styled.label`
+ font-size: 20px;
+`
+
+export const ErrorMessage = styled.div`
+ height: 20px;
+ font-size: 18px;
+ color: red;
+`
