@@ -1,4 +1,9 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 import GlobalStyles from "./styles/GlobalStyles";
+import Layout from "./components/Layout/Layout";
+import About from "./pages/About/About";
+import Home from "./pages/Home/Home";
 
 
 // import Homework06 from "./homeworks/Homework06/Homework06";
@@ -18,40 +23,29 @@ import GlobalStyles from "./styles/GlobalStyles";
 // import Homework11 from "./homeworks/Homework11/Homework11";
 // import Lesson12 from "./lessons/Lesson12/Lesson12"
 // import Homework12 from "./homeworks/Homework12/Homework12";
-import Lesson13 from "./lessons/Lesson13/Lesson13";
+// import Lesson13 from "./lessons/Lesson13/Lesson13";
 
 
 // import Homework14 from "./homeworks/Homework14/Homework14";
+// import Homework15 from "./homeworks/Homework15/Homework15";
 
 
 function App() {
   return (
-    <>
-      <GlobalStyles/>
-
-      {/* <Lesson06/> */}
-      {/* <Homework06 /> */}
-      {/* <Lesson07/> */}
-      {/* <Homework07/> */}
-      {/* <Lesson08/> */}
-      {/* <Consultation04/> */}
-      {/* <Homework08/> */}
-      {/* <Lesson09/> */}
-      {/* <Homework10/> */}
-      {/* <Homework09/> */}
-      {/* <Lesson10/> */}
-      {/* <Homework10/> */}
-      {/* <Lesson11/> */}
-      {/* <Homework11/> */}
-      {/* <Lesson12 /> */}
-       <Lesson13/>
-     
-
-      {/* <Homework14/> */}
-     
-
-
-    </>
+    //BrowserRouter - глобальная обёртка для всего приложения,
+    // которая позволяет использовать маршрутизацию
+    <BrowserRouter>
+      <GlobalStyles />
+      <Layout>
+        {/* Routes - обертка, которая собирает все маршруты приложения */}
+        <Routes>
+          {/* Route - компонент библиотеки, в который передаётся маршрут и тот компонент (страницу),
+          который должен быть вызван, если выполнен переход по этому маршруту */}
+          <Route path='/' element={<Home />}/>
+          <Route path='/about' element={<About />}/>
+        </Routes>
+      </Layout>
+    </BrowserRouter>
   );
 }
 
