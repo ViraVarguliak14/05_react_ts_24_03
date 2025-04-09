@@ -13,13 +13,12 @@ export const MainButton = styled.button<ButtonStyledProps>`
   background-color: #1410e0;
 
   margin-top: 10px;
-  width: 100%;
   padding: 12px 20px;
   font-size: 20px;
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  background: ${({ danger }) => (danger ? '#DB110A' : '#0d09f0')};
+  background: ${({ danger }) => (danger ? '#DB110A' : '#4102d4')};
 
   color: white;
   font-weight: bold;

@@ -7,7 +7,7 @@ export const AboutWrapper = styled.div`
   justify-content: center;
   flex: 1;
   padding: 60px;
-  background-color: rgb(197, 238, 233);
+  background-color: rgb(10, 223, 198);
 `
 
 export const Title = styled.div`
