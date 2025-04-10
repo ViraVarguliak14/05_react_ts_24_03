@@ -13,6 +13,7 @@ import Clients from "./pages/Clients/Clients";
 import Facebook from './pages/Clients/components/Facebook/Facebook'
 import Instagram from "./pages/Clients/components/Instagram/Instagram";
 import Telegram from "./pages/Clients/components/Telegram/Telegram";
+import Lesson18 from "./lessons/Lesson18/Lesson18";
 
 // import Homework06 from "./homeworks/Homework06/Homework06";
 
@@ -59,6 +60,7 @@ function App() {
           <Route path='/clients/facebook' element={<Facebook/>} />
           <Route path='/clients/instagram' element={<Instagram />} />
           <Route path='/clients/telegram' element={<Telegram />} />
+          <Route path='/lesson18' element={<Lesson18 />} />
 
            {/* path='*' - специальный маршрут, который вызовет переданный компонент в
           том случае, если в маршрутах выше не будет найдено того маршрута,
