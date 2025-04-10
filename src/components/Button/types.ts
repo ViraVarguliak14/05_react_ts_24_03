@@ -5,4 +5,5 @@
     disabled?: boolean,
     type?: 'submit'| 'button'|'reset'
     danger?: boolean;
+    children?: React.ReactNode;
 }
