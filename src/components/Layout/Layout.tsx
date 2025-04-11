@@ -1,14 +1,47 @@
-
+import axios from "axios"
 import { v4 } from "uuid"
+
+import { Link, useNavigate } from "react-router-dom";
+import { createContext, useState } from "react"
 import { navLinksData } from "./data"
 import { LayoutComponent, Header, LogoText, Nav, Main, Footer, StyledNavLink, LogoImage } from "./styles"
-import { LayoutProps, NavLinkObj } from "./types"
-import { Link, useNavigate } from "react-router-dom";
+import { LayoutProps, NavLinkObj, JokeTextInterface } from "./types"
 import { ButtonContainer } from "../../lessons/Lesson13/styles";
 import Logo from '../../assets/Cartoonify.png'
 import Button from "../Button/Button";
 
+export const JokeContext = createContext<JokeTextInterface>({
+  joke: undefined,
+  error: undefined,
+  isLoading: false,
+  getJoke: ()=>{}
+})
+
 function Layout({ children }: LayoutProps) {
+  const [joke, setJoke] = useState<string | undefined>(undefined);
+  const [error, setError] = useState<string | undefined>(undefined);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  const JOKE_URL: string = 'https://official-joke-api.appspot.com/random_joke';
+
+  const getJoke = async () => {
+    setError(undefined)
+    try {
+      setIsLoading(true);
+      const response = await axios.get(JOKE_URL)
+      console.log(response.data);
+      const data = response.data;
+      setJoke(`${data.setup} - ${data.punchline}`)
+    }
+    catch (error: any) {
+      console.log(error.message);
+      setError(error.message)
+    }
+    finally {
+      console.log('Результат получен');
+      setIsLoading(false);
+    }
+  }
   const navigate = useNavigate();
 
   const goBack = () => {
@@ -26,6 +59,7 @@ function Layout({ children }: LayoutProps) {
   })
 
   return (
+  <JokeContext.Provider value={{joke, error, isLoading, getJoke}}>
     <LayoutComponent>
       <Header>
         <Link to='/'>
@@ -45,6 +79,7 @@ function Layout({ children }: LayoutProps) {
         <LogoText>Company name</LogoText>
       </Footer>
     </LayoutComponent>
+  </JokeContext.Provider>  
   )
 }
 

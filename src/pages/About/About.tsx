@@ -1,10 +1,12 @@
+import { useContext } from "react";
+import { JokeContext } from "../../components/Layout/Layout";
 import { AboutWrapper, Title } from "./styles";
 
 function About() {
+  const { joke } = useContext(JokeContext)
   return (
     <AboutWrapper>
-      <Title>The library for web and native user interfaces
-      </Title>
+       <Title>{joke}</Title>
     </AboutWrapper>
   )
 }
