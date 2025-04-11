@@ -3,6 +3,7 @@ import Button from "../../../../components/Button/Button"
 import Input from "../../../../components/Input/Input"
 import { BlogManagementTitle, BlogManagementWrapper } from "./styles"
 import { BlogManagementContextType, BlogMessage } from "./types";
+import Card from "../Card/Card";
 
 export const BlogManagementContext = createContext<BlogManagementContextType>({
     data: undefined,
@@ -38,6 +39,7 @@ function BlogManagement() {
                     onChange={(e) => seInputMessage(e.target.value)}
                     placeholder="Enter your message" name={"postBtn"} />
                 <Button onClick={handlePost} name={"blogMessage"}>Post</Button>
+                <Card/>
             </BlogManagementWrapper>
         </BlogManagementContext.Provider>
 

@@ -6,5 +6,7 @@ export const navLinksData: NavLinkObj[] = [
   { to: '/course', linkName: 'Course' },
   { to: '/users', linkName: 'User' },
   { to: "/clients", linkName: "Clients" },
-  { to: "/lesson18", linkName: "Lesson18" }
+  { to: "/lesson18", linkName: "Lesson18" },
+  { to: "/homework18", linkName: "Homework18" }
+  
 ]
