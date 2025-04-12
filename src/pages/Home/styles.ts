@@ -26,3 +26,8 @@ export const Title = styled.div`
     transform: scale(1.05);
   }
 `;
+export const ErrorTitle = styled.h2`
+  font-size: 24px;
+  color: #b00020;
+  margin-bottom: 12px;
+`;
