@@ -18,7 +18,6 @@ export const Header = styled.header`
   border-bottom: 2px solid #6804eb; 
   position: relative;
 
-
 `;
 
 export const Nav = styled.nav`
@@ -49,7 +48,6 @@ export const StyledNavLink = styled(NavLink)`
     background-color: #ac0bf7; 
   }
 `;
-
 
 export const Main = styled.main`
   display: flex;

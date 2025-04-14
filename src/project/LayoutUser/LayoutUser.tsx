@@ -24,39 +24,44 @@ export const UserDataContext = React.createContext<UserTextInterface>({
 });
 
 function Layout({ children }: LayoutProps) {
-  const [user, setUser] = useState<string | undefined>(undefined);
-  const [name, setName] = useState<string | undefined>(undefined);
-  const [email, setEmail] = useState<string | undefined>(undefined);
-  const [city, setCity] = useState<string | undefined>(undefined);
-  const [country, setCountry] = useState<string | undefined>(undefined);
-  const [phone, setPhone] = useState<string | undefined>(undefined);
-  const [avatar, setAvatar] = useState<string | undefined>(undefined);
-  const [error, setError] = useState<string | undefined>(undefined);
-  const [isLoading, setLoading] = useState<boolean>(false);
-
+  const [userData, setUserData] = useState<UserTextInterface>({
+    user: undefined,
+    name: undefined,
+    email: undefined,
+    city: undefined,
+    country: undefined,
+    phone: undefined,
+    avatar: undefined,
+    error: undefined,
+    isLoading: false,
+    getUser: () => {},
+  });
   const USER_URL: string = 'https://randomuser.me/api/';
 
   const getUser = async () => {
-    setError(undefined);
+    setUserData(prev => ({ ...prev, error: undefined, isLoading: true }));
     try {
-      setLoading(true);
       const response = await axios.get(USER_URL);
       const data = response.data.results[0];
-      setUser(`${data.name.first} ${data.name.last}`);
-      setName(data.name.first);
-      setEmail(data.email);
-      setCity(data.location.city);
-      setCountry(data.location.country);
-      setPhone(data.phone);
-      setAvatar(data.picture.large);
-    } catch (error: unknown) {
-      if (error instanceof Error) {
-        setError(error.message);
-      } else {
-        setError('Unexpected error occurred');
-      }
-    } finally {
-      setLoading(false);
+      setUserData({
+        user: `${data.name.first} ${data.name.last}`,
+        name: data.name.first,
+        email: data.email,
+        city: data.location.city,
+        country: data.location.country,
+        phone: data.phone,
+        avatar: data.picture.large,
+        error: undefined,
+        isLoading: false,
+        getUser,
+      });
+    } catch (error: any) {
+      setUserData(prev => ({
+        ...prev,
+        error: error instanceof Error ? error.message : 'Unexpected error',
+        isLoading: false,
+        getUser,
+      }));
     }
   };
 
@@ -71,10 +76,7 @@ function Layout({ children }: LayoutProps) {
   ));
 
   return (
-    <UserDataContext.Provider value={{
-      user, name, email, error, isLoading, getUser,
-      city, country, phone, avatar
-    }}>
+    <UserDataContext.Provider value={{ ...userData, getUser }}>
       <LayoutComponent>
         <Header>
           <Link to="/"></Link>

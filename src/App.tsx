@@ -81,6 +81,7 @@ import LoginForm from './project/UserLoginForm/UserLoginForm';
 import UserData from './project/UserData/UserData';
 import GlobalStyles from "./styles/GlobalStyles";
 import Layout from './project/LayoutUser/LayoutUser';
+import PageNotFound from './pages/PageNotFound/PageNotFound';
 
 function App() {
   return (
@@ -90,6 +91,7 @@ function App() {
         <Routes>
           <Route path="/login" element={<LoginForm  />} />
           <Route path="/user-data" element={<UserData />} />
+          <Route path='*' element={<PageNotFound />} />
         </Routes>
       </Layout>
     </BrowserRouter>

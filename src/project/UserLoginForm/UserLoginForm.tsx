@@ -4,7 +4,6 @@ import * as Yup from 'yup';
 import Button from "../../components/Button/Button";
 import Input from "../../components/Input/Input";
 import { LoginFormComponent, SubmitError, Title } from "./styles";
-import { LoginFormValues } from "./types";
 import { useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { UserDataContext } from "../../project/LayoutUser/LayoutUser";
@@ -37,12 +36,11 @@ function LoginForm() {
     },
     validationSchema: schema,
     validateOnChange: false,
-    onSubmit: async (values: LoginFormValues) => {
+    onSubmit: () => {
       setSubmitError(null);
-      console.table(values);
       try {
-        await getUser(); 
-        navigate('/user-data'); 
+        getUser();
+        navigate('/user-data');
       } catch (error) {
         setSubmitError("Login failed. Try again.");
         console.error(error);
